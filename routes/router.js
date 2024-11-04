@@ -56,6 +56,11 @@ router.get("/logout", (req, res, next) => {
       res.redirect("/");
     });
   });
+router.get("/join", controller.joinGet);
+router.post("/join", controller.joinPost);
+router.get("/create", controller.createGet);
+router.post("/create", controller.createPost);
+router.post("/:messageid/deletemessage", controller.deleteMessagePost);
   
-//next steps:1)join the club and change member status.2)create new message
+//add admin optiony, delete option on messages only for them
 module.exports = router;

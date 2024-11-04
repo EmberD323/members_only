@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Create Message</title>
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+  
+  <% if (locals.user) {%>
+    <h1>Create a message</h1>
+    <%- include("partials/errors.ejs") %>
+    <form action="/create" method="POST">
+        <label for="title">Title:</label>
+        <input id="title" name="title" placeholder="title" type="text" required/>
+        <label for="message" >Write your message here: </label>
+        <textarea name="message" id="message" placeholder="message" required></textarea>
+        <button type="submit">Add</button>
+    </form>
+    <a href="/">Homepage</a>
+    <a href="/logout">Log out</a>
+  <% } else { %>
+    <%- include("partials/signInOrUp.ejs") %>
+  <%}%>
+  
+  
+</body>
+</html>

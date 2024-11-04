@@ -11,14 +11,14 @@ CREATE TABLE IF NOT EXISTS users (
   last_name TEXT,
   username VARCHAR(150),
   password VARCHAR(150),
-  membership_status TEXT
-
+  membership_status TEXT,
+  admin_status TEXT
 );
 
 CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   title TEXT,
-  time TIME,
+  time VARCHAR(250),
   text TEXT,
   userid INTEGER,
     CONSTRAINT userid_fk FOREIGN KEY (userid) REFERENCES users(id)
